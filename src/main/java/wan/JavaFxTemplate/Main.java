@@ -2,7 +2,7 @@ package wan.JavaFxTemplate;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import wan.MyUtils;
+import wan.JavaFxTemplate.utils.MyUtils;
 
 public class Main extends Application {
 

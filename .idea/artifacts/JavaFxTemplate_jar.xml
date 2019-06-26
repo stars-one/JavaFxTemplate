@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact name="JavaFxTemplate:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaFxTemplate_jar</output-path>
+    <root id="root">
+      <element id="archive" name="JavaFxTemplate.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/out/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="JavaFxTemplate" />
+      </element>
+      <element id="library" level="project" name="Maven: com.jfoenix:jfoenix:8.0.8" />
+      <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
+    </root>
+  </artifact>
+</component>

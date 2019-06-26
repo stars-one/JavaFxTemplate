@@ -14,7 +14,11 @@
             <artifactId>jfoenix</artifactId>
             <version>8.0.8</version>
         </dependency>
-
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.2</version>
+        </dependency>
     </dependencies>
 
     <build>
