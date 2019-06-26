@@ -8,7 +8,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        MyUtils.showMainStage(this,primaryStage,"测试模板","scene_main",null,600,400);
+        MyUtils.showMainStage(primaryStage,"测试模板","scene_main",null,600,400);
 
     }
 

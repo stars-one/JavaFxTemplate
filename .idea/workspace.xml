@@ -6,20 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27fa4157-c485-4431-bc68-a041573bd5fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/JFxUtils1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/commons-io-2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wan/JavaFxTemplate/controller/MainSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wan/JavaFxTemplate/controller/MainSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wan/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wan/fxml/scene_main.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/wan/JavaFxTemplate/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wan/JavaFxTemplate/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/wan/JavaFxTemplate/controller/MainSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wan/JavaFxTemplate/controller/MainSceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/wan/JavaFxTemplate/fxml/scene_main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wan/JavaFxTemplate/fxml/scene_main.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="27fa4157-c485-4431-bc68-a041573bd5fa" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,10 +18,11 @@
     <session id="1012137688">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -42,7 +30,7 @@
           <entry key="MF" value="1" />
           <entry key="fxml" value="2" />
           <entry key="java" value="10" />
-          <entry key="md" value="2" />
+          <entry key="md" value="3" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
@@ -50,7 +38,7 @@
         <counts>
           <entry key="JAVA" value="10" />
           <entry key="Manifest" value="1" />
-          <entry key="Markdown" value="2" />
+          <entry key="Markdown" value="3" />
           <entry key="XML" value="5" />
         </counts>
       </usages-collector>
@@ -73,24 +61,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/wan/JavaFxTemplate/fxml/scene_main.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/readme.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="209">
-                <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-              </first_editor>
-              <second_editor />
+            <state relative-caret-position="76">
+              <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -176,7 +152,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -194,6 +169,13 @@
               <item name="JavaFxTemplate" type="462c0819:PsiDirectoryNode" />
               <item name="out" type="462c0819:PsiDirectoryNode" />
               <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaFxTemplate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaFxTemplate" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaFxTemplate_jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaFxTemplate" type="b2602c69:ProjectViewProjectNode" />
@@ -231,6 +213,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -318,11 +301,12 @@
       <workItem from="1560246210550" duration="70000" />
       <workItem from="1561293242534" duration="1583000" />
       <workItem from="1561523907293" duration="2560000" />
+      <workItem from="1561526982048" duration="430000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6127000" />
+    <option name="totallyTimeSpent" value="6557000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -341,7 +325,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32892805" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3274596" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067025" side_tool="true" weight="0.32892805" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="11" />
@@ -368,27 +352,9 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wan/fxml/scene_main.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wan/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wan/fxml/scene_main.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/wan/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
     <entry file="file://$PROJECT_DIR$/src/main/java/wan/JavaFxTemplate/utils/BaseController.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -411,9 +377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="40" lean-forward="true" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -427,14 +390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wan/JavaFxTemplate/fxml/scene_main.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -444,6 +399,14 @@
           <second_editor />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wan/JavaFxTemplate/fxml/scene_main.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
   </component>
   <component name="masterDetails">

@@ -25,7 +25,7 @@ public class Intent {
     private BaseController controller;
     private int width = 600, height = 400;
     private String title;
-    private String iconName;
+    private String iconName = null;
     private Map<String, Object> conveyData = new HashMap<>();
 
 
@@ -69,7 +69,7 @@ public class Intent {
         return (String) conveyData.get(key);
     }
 
-    public Object getDataObject(String key){
+    public Object getDataObject(String key) {
         return conveyData.get(key);
     }
 
@@ -78,8 +78,7 @@ public class Intent {
     }
 
 
-    public Intent(Object o, String fxmlName, String title, String iconName,int width, int height ) {
-        this.o = o;
+    public Intent(String fxmlName, String title, String iconName, int width, int height) {
         this.fxmlName = fxmlName;
         this.width = width;
         this.height = height;
@@ -87,65 +86,65 @@ public class Intent {
         this.iconName = iconName;
     }
 
-    public Intent(Object o, String fxmlName, String title,String iconName) {
-        this.o = o;
+    public Intent(String fxmlName, String title, String iconName) {
         this.fxmlName = fxmlName;
         this.title = title;
         this.iconName = iconName;
     }
-    public Intent(Object o, String fxmlName, String title) {
-        this.o = o;
+
+    public Intent(String fxmlName, String title) {
         this.fxmlName = fxmlName;
         this.title = title;
-        this.iconName = "";
     }
-    public Intent(Object o, String fxmlName, int width, int height, String title) {
-        this.o = o;
+
+    public Intent(String fxmlName, int width, int height, String title) {
         this.fxmlName = fxmlName;
         this.width = width;
         this.height = height;
         this.title = title;
-        this.iconName = "";
     }
 
-    public Intent(Object o, String fxmlName, int width, int height) {
-        this.o = o;
+    public Intent(String fxmlName, int width, int height) {
         this.fxmlName = fxmlName;
         this.width = width;
         this.height = height;
-        this.title = "";
-        this.iconName = null;
     }
 
-    public Intent(Object o, String fxmlName) {
-        this.o = o;
+    public Intent(String fxmlName) {
+        //TODO 把o参数给删除，更新JFxUtils
         this.fxmlName = fxmlName;
     }
 
-    public void start() throws IOException {
-        FXMLLoader loader = new FXMLLoader();    // 创建对象
-        loader.setBuilderFactory(new JavaFXBuilderFactory());    // 设置BuilderFactory
-        loader.setLocation(MyUtils.getFxmlPath(o, fxmlName));
-        InputStream inputStream = MyUtils.getFxmlFile(o, fxmlName);
-        Object object = loader.load(inputStream);
+    public void start() {
+        try {
+            FXMLLoader loader = new FXMLLoader();    // 创建对象
+            loader.setBuilderFactory(new JavaFXBuilderFactory());    // 设置BuilderFactory
+            loader.setLocation(MyUtils.getFxmlPath(fxmlName));
+            InputStream inputStream = MyUtils.getFxmlFile(fxmlName);
 
-        //        Parent root = FXMLLoader.load(MyUtils.getFxmlPath(this,"scene_main"));
-        Parent root = (Parent) object;
+            Object object = null;
+            object = loader.load(inputStream);
 
-        Stage primaryStage = new Stage();
-        if (iconName != null) {
-            primaryStage.getIcons().add(MyUtils.getImg(iconName));
-        }
+            //        Parent root = FXMLLoader.load(MyUtils.getFxmlPath(this,"scene_main"));
+            Parent root = (Parent) object;
 
-        primaryStage.setTitle(title);
-        primaryStage.setScene(new Scene(root, width, height));
-        primaryStage.show();
-        Object controller = loader.getController();
-        if (controller instanceof BaseController) {
-            this.controller = ((BaseController) controller);
-        }
-        if (conveyData.size() != 0) {
-            getController().setIntent(this);
+            Stage primaryStage = new Stage();
+            if (iconName != null) {
+                primaryStage.getIcons().add(MyUtils.getImg(iconName));
+            }
+
+            primaryStage.setTitle(title);
+            primaryStage.setScene(new Scene(root, width, height));
+            primaryStage.show();
+            Object controller = loader.getController();
+            if (controller instanceof BaseController) {
+                this.controller = ((BaseController) controller);
+            }
+            if (conveyData.size() != 0) {
+                getController().setIntent(this);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

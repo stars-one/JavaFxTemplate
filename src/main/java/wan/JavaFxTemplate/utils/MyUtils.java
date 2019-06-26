@@ -17,6 +17,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Border;
 import javafx.stage.Stage;
+import wan.JavaFxTemplate.Main;
 
 /**
  * @author StarsOne
@@ -24,12 +25,11 @@ import javafx.stage.Stage;
  * @description
  */
 public class MyUtils {
-    private static Class main;
+    private static Class main = Main.class;
 
     /**
      * 创建stage并显示
      *
-     * @param o            this 传入主界面Main
      * @param primaryStage 舞台，为空的话之后会创建一个新的；如果是初始界面则直接传入对应的primaryStage
      * @param title        标题
      * @param fxmlName     新窗口对应的fxml文件名，不需要扩展名
@@ -38,12 +38,12 @@ public class MyUtils {
      * @param height       高度
      * @throws IOException
      */
-    public static void showMainStage(Object o, Stage primaryStage, String title, String fxmlName, String iconName, int width, int height) throws IOException {
-        main = o.getClass();
+    public static void showMainStage(Stage primaryStage, String title, String fxmlName, String iconName, int width, int height) throws IOException {
+
         FXMLLoader loader = new FXMLLoader();    // 创建对象
         loader.setBuilderFactory(new JavaFXBuilderFactory());    // 设置BuilderFactory
-        loader.setLocation(getFxmlPath(o, fxmlName));
-        InputStream inputStream = getFxmlFile(o, fxmlName);
+        loader.setLocation(getFxmlPath(fxmlName));
+        InputStream inputStream = getFxmlFile(fxmlName);
         Object object = loader.load(inputStream);
         Parent root = (Parent) object;
         if (iconName != null ) {
@@ -124,30 +124,20 @@ public class MyUtils {
     /**
      * 获得fxml文件路径
      *
-     * @param o  class文件，传入this
      * @param fileName 文件名
      * @return
      */
-    public static URL getFxmlPath(Object o, String fileName) {
-        if (o.getClass().getName().contains("controller")) {
-            return o.getClass().getResource("../fxml/" + fileName + ".fxml");
-        } else {
-            return o.getClass().getResource("fxml/" + fileName + ".fxml");
-        }
+    public static URL getFxmlPath(String fileName) {
+            return main.getResource("fxml/" + fileName + ".fxml");
     }
 
     /**
      * 获得输出流
-     * @param o
      * @param fileName
      * @return
      */
-    public static InputStream getFxmlFile(Object o, String fileName) {
-        if (o.getClass().getName().contains("controller")) {
-            return o.getClass().getResourceAsStream("../fxml/" + fileName + ".fxml");
-        } else {
-            return o.getClass().getResourceAsStream("fxml/" + fileName + ".fxml");
-        }
+    public static InputStream getFxmlFile(String fileName) {
+        return main.getResourceAsStream("fxml/" + fileName + ".fxml");
     }
 
     public interface LinkActionHander {
