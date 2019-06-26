@@ -1,15 +1,10 @@
 # JFxUtils
-
 ## 介绍
 这是一个JFX的工具库，Intent可以简单地实现打开一个新窗口并传递数据，DialogBuilder可以简单地生成对话框,MyUtils有些常用的功能
 ## 使用
-`JFxUtils`与`JavaFxTemplate`是配套使用的，想要使用的话，请下载`JavaFxTemplate`模板
----
-**JavaFxTemplate模版已经整合了JFxUtils，直接使用即可**
-[JavaFxTemplate项目地址](https://github.com/Stars-One/JavaFxTemplate)	
-
-下载jar包 ，把jar包导入到项目中
-[下载地址](https://github.com/Stars-One/JFXUtils/releases/download/1.0/JFxUtils1.0.zip)
+- MyUtils 封装了一些常用的的方法
+- Intent与BaseController 打开新窗口，并传递数据
+- DialogBuilder 基于Jfoenix，快速生成material Design风格的对话框
 ### Intent的使用
 使用Intent，可以打开一个新窗口，还能传递数据
 ### 如何使用？
@@ -18,15 +13,14 @@
 
 下面是几种不同的构造方法
 
-- Intent(Object o, String fxmlName)
-- Intent(Object o, String fxmlName, String title)
-- Intent(Object o, String fxmlName, String title,String iconName) 
-- Intent(Object o, String fxmlName, int width, int height)
-- Intent(Object o, String fxmlName, int width, int height, String title)
-- Intent(Object o, String fxmlName, int width, int height, String title, String iconName)
+- Intent(String fxmlName)
+- Intent(String fxmlName, String title)
+- Intent(String fxmlName, String title,String iconName) 
+- Intent(String fxmlName, int width, int height)
+- Intent(String fxmlName, int width, int height, String title)
+- Intent(String fxmlName, int width, int height, String title, String iconName)
  
 **PS:**
-- `o` 当前的controller	
 - `fxmlName` fxml的名字，不需要写扩展名	
 - `iconName` 图标名，需要写扩展名
 
@@ -36,18 +30,18 @@
 //在一个controller中
 //fxml名字为test
 //默认宽高 600*400 
-Intent intent = new Intent(this,"test");
+Intent intent = new Intent("test");
 //打开新窗口
 intent.start();
 ```
 - 设置标题
 ```
-Intent intent = new Intent(this,"test","hello world");
+Intent intent = new Intent("test","hello world");
 intent.start();
 ```
 - 设置宽高
 ```
-Intent intent = new Intent(this,"test",800,400);
+Intent intent = new Intent("test",800,400);
 intent.start();
 ```
 
@@ -69,9 +63,13 @@ intent.start();
 - getDataObject(String key) **需要转型**
 
 **例子:**
-- 获得list数据
-
 ```
+//某个controller中打开新窗口，并传递list数据
+Intent intent = new Intent("test",800,400);
+intent.addData("list",studentlist);
+intent.start();
+
+//test对应的controller，接收list数据
 package wan.dormsystem.controller;
 
 import java.net.URL;
@@ -102,8 +100,8 @@ public class TestController extends BaseController {
 [DialogBuilder使用](https://www.cnblogs.com/kexing/p/10989323.html)
 ### MyUtils
 - closeWindow(Control control) 关闭窗口
-- Image getImg(Object o, String fileName) 获得图片
+- Image getImg(String fileName) 获得图片
 - void setLinkAutoAction(Hyperlink hyperlink) 设置链接自动跳转
 - void setLinkAction(Hyperlink hyperlink, LinkActionHander hander) 设置链接点击事件
 
-更多使用详情，请下载文档查看，[JFxUtils中文文档](https://github.com/Stars-One/JFXUtils/raw/master/JFxUtilsDoc.zip)
+更多使用详情，可以直接去类中查看

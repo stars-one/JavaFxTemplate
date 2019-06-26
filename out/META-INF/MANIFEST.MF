@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: jfoenix-8.0.8.jar commons-io-2.2.jar
-Main-Class: wan.JavaFxTemplate.Main
-
