@@ -4,9 +4,11 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.net.URLDecoder;
 
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
@@ -30,6 +32,7 @@ public class MyUtils {
     /**
      * 创建stage并显示
      *
+     * @param o            this 传入主界面Main
      * @param primaryStage 舞台，为空的话之后会创建一个新的；如果是初始界面则直接传入对应的primaryStage
      * @param title        标题
      * @param fxmlName     新窗口对应的fxml文件名，不需要扩展名
@@ -38,15 +41,15 @@ public class MyUtils {
      * @param height       高度
      * @throws IOException
      */
-    public static void showMainStage(Stage primaryStage, String title, String fxmlName, String iconName, int width, int height) throws IOException {
-
+    public static void showMainStage(Object o, Stage primaryStage, String title, String fxmlName, String iconName, int width, int height) throws IOException {
+        main = o.getClass();
         FXMLLoader loader = new FXMLLoader();    // 创建对象
         loader.setBuilderFactory(new JavaFXBuilderFactory());    // 设置BuilderFactory
         loader.setLocation(getFxmlPath(fxmlName));
         InputStream inputStream = getFxmlFile(fxmlName);
         Object object = loader.load(inputStream);
         Parent root = (Parent) object;
-        if (iconName != null ) {
+        if (iconName != null) {
             Image image = getImg(iconName);
             primaryStage.getIcons().add(image);
         }
@@ -54,10 +57,12 @@ public class MyUtils {
         primaryStage.setScene(new Scene(root, width, height));
         primaryStage.show();
     }
+
     /**
      * 设置每次点击链接之后，链接不会变成灰色以及点击之后执行的操作
+     *
      * @param hyperlink hyperlink
-     * @param hander 点击监听器，点击hyperlink之后进行的操作
+     * @param hander    点击监听器，点击hyperlink之后进行的操作
      */
     public static void setLinkAction(Hyperlink hyperlink, LinkActionHander hander) {
 
@@ -71,6 +76,7 @@ public class MyUtils {
     /**
      * 设置链接可以自动跳转资源管理器，浏览器或者打开QQ添加好友界面（保证hyperlink的文字是正确的目录路径，网址，QQ号）
      * QQ添加好友测试不通过，还有bug
+     *
      * @param hyperlink hyperlink
      */
     public static void setLinkAutoAction(Hyperlink hyperlink) {
@@ -100,6 +106,7 @@ public class MyUtils {
 
     /**
      * 关闭当前窗口
+     *
      * @param control 一个控件
      */
     public static void closeWindow(Control control) {
@@ -109,6 +116,7 @@ public class MyUtils {
 
     /**
      * 获得图片文件
+     *
      * @param fileName 图片名+扩展名
      * @return 图片image
      */
@@ -117,7 +125,7 @@ public class MyUtils {
         if (resourceAsStream != null) {
             return new Image(resourceAsStream);
         }
-       return null;
+        return null;
     }
 
 
@@ -128,16 +136,38 @@ public class MyUtils {
      * @return
      */
     public static URL getFxmlPath(String fileName) {
-            return main.getResource("fxml/" + fileName + ".fxml");
+        return main.getResource("fxml/" + fileName + ".fxml");
     }
 
     /**
      * 获得输出流
+     *
      * @param fileName
      * @return
      */
     public static InputStream getFxmlFile(String fileName) {
         return main.getResourceAsStream("fxml/" + fileName + ".fxml");
+    }
+
+    /**
+     * 获得当前jar包所在的文件夹
+     * @return 路径
+     */
+    public static String getCurrentPath() {
+        String decode = null;
+        try {
+            decode = URLDecoder.decode(main.getProtectionDomain()
+                    .getCodeSource().getLocation().getFile(), "UTF-8");
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        if (decode != null) {
+            return new File(decode).getParent();
+        } else {
+            return null;
+        }
+
     }
 
     public interface LinkActionHander {
