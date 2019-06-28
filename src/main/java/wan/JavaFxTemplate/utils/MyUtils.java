@@ -19,7 +19,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Border;
 import javafx.stage.Stage;
-import wan.JavaFxTemplate.Main;
+import wan.Main;
 
 /**
  * @author StarsOne

@@ -217,9 +217,13 @@ public class DialogBuilder {
         }
 
         alert.setContent(layout);
-        Optional<String> input = alert.showAndWait();
-        //不为空，则回调接口
-        input.ifPresent(s -> onInputListener.onGetText(s));
+        if (textField != null) {
+            Optional<String> input = alert.showAndWait();
+            //不为空，则回调接口
+            input.ifPresent(s -> onInputListener.onGetText(s));
+        } else {
+            alert.showAndWait();
+        }
 
         return alert;
     }
