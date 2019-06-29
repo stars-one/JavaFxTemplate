@@ -19,7 +19,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Border;
 import javafx.stage.Stage;
-import wan.Main;
+import wan.JavaFxTemplate.Main;
 
 /**
  * @author StarsOne
@@ -41,8 +41,8 @@ public class MyUtils {
      * @param height       高度
      * @throws IOException
      */
-    public static void showMainStage(Object o, Stage primaryStage, String title, String fxmlName, String iconName, int width, int height) throws IOException {
-        main = o.getClass();
+    public static void showMainStage(Stage primaryStage, String title, String fxmlName, String iconName, int width, int height) throws IOException {
+
         FXMLLoader loader = new FXMLLoader();    // 创建对象
         loader.setBuilderFactory(new JavaFXBuilderFactory());    // 设置BuilderFactory
         loader.setLocation(getFxmlPath(fxmlName));

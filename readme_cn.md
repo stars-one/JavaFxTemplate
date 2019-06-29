@@ -8,7 +8,7 @@
 原本是想将`JFxUtils`单独出来，打成一个jar包，不过，项目引用之后一起打成jar包，项目的jar包跑不起来，报找不到类的错误。
 
 复制该项目，修改项目名，之后修改pom.xml中的 groupId,artifactId,version。
-打开IDEA，Main.java的里面需要重新导入一下包名，之后即可成功运行。
+打开IDEA，Main.java和MyUtils的里面需要重新导入一下Main.class的包名，之后即可成功运行。
 
 **打jar包的时候，需要注意，把META-INF的路径设置在out目录下，否则，运行jar包会失败，如下图**
 
