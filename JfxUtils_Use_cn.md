@@ -103,5 +103,5 @@ public class TestController extends BaseController {
 - Image getImg(String fileName) 获得图片
 - void setLinkAutoAction(Hyperlink hyperlink) 设置链接自动跳转
 - void setLinkAction(Hyperlink hyperlink, LinkActionHander hander) 设置链接点击事件
-
+- void setControlBackground(Control control,String color) 设置控件的背景颜色
 更多使用详情，可以直接去类中查看

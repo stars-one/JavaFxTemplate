@@ -17,7 +17,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Control;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Border;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import wan.JavaFxTemplate.Main;
 
@@ -32,7 +35,6 @@ public class MyUtils {
     /**
      * 创建stage并显示
      *
-     * @param o            this 传入主界面Main
      * @param primaryStage 舞台，为空的话之后会创建一个新的；如果是初始界面则直接传入对应的primaryStage
      * @param title        标题
      * @param fxmlName     新窗口对应的fxml文件名，不需要扩展名
@@ -129,6 +131,14 @@ public class MyUtils {
     }
 
 
+    /**
+     * 设置控件的背景颜色
+     * @param control 控件
+     * @param color 颜色，可以是16进制颜色或者是颜色名
+     */
+    public static void setControlBackground(Control control,String color) {
+        control.setBackground(new Background(new BackgroundFill(Paint.valueOf(color),null,null)));
+    }
     /**
      * 获得fxml文件路径
      *
