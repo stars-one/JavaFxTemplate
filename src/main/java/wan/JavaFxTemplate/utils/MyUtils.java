@@ -1,5 +1,7 @@
 package wan.JavaFxTemplate.utils;
 
+import com.jfoenix.controls.JFXSnackbar;
+
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +22,9 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Border;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import wan.JavaFxTemplate.Main;
 
@@ -130,6 +134,16 @@ public class MyUtils {
         return null;
     }
 
+
+    /**
+     * 显示toast
+     * @param pane 控件所在的画板（AnchorPane, BorderPane, DialogPane, FlowPane, GridPane, HBox, PopupControl.CSSBridge, StackPane, TextFlow, TilePane, VBox）
+     * @param text 显示文字
+     */
+    public static void showToast(Pane pane, String text) {
+        JFXSnackbar bar = new JFXSnackbar(pane);
+        bar.enqueue(new JFXSnackbar.SnackbarEvent(new Text(text)));
+    }
 
     /**
      * 设置控件的背景颜色
